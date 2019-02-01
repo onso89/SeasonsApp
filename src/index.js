@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import SeasonDisplay from "./seasons";
 
 class App extends React.Component {
   //initialize state with cunstructor function
@@ -8,8 +9,10 @@ class App extends React.Component {
 
     //initialize state as an object with property lat and value null for now.
     this.state = { lat: null, errMessage: "" };
+  }
 
-    //move any function out of Render method so it doesn't get called repeatedly every time Render is called
+  //move any function out of Render method so it doesn't get called repeatedly every time Render is called
+  componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
       position => {
         //update state with setState method once the current position is returned from the callback
@@ -26,7 +29,7 @@ class App extends React.Component {
 
   render() {
     if (this.state.lat && !this.state.errMessage) {
-      return <div>{this.state.lat}</div>;
+      return <SeasonDisplay lat={this.state.lat} />;
     }
     if (!this.state.lat && this.state.errMessage) {
       return <div>{this.state.errMessage}</div>;
