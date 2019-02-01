@@ -4,13 +4,8 @@ import SeasonDisplay from "./seasons";
 import Spinner from "./spinner";
 
 class App extends React.Component {
-  //initialize state with cunstructor function
-  constructor(props) {
-    super(props);
-
-    //initialize state as an object with property lat and value null for now.
-    this.state = { lat: null, errMessage: "" };
-  }
+  //initialize state as an object with property lat and value null for now.
+  state = { lat: null, errMessage: "" };
 
   //move any function out of Render method so it doesn't get called repeatedly every time Render is called
   componentDidMount() {
