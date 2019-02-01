@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import SeasonDisplay from "./seasons";
+import Spinner from "./spinner";
 
 class App extends React.Component {
   //initialize state with cunstructor function
@@ -34,7 +35,7 @@ class App extends React.Component {
     if (!this.state.lat && this.state.errMessage) {
       return <div>{this.state.errMessage}</div>;
     }
-    return <div>Loading!...</div>;
+    return <Spinner message="Allow access to location" />;
   }
 }
 
