@@ -19,7 +19,6 @@ class App extends React.Component {
         //update errMessage state once there is an error and call render to display the message to the user
         this.setState({ errMessage: err.message });
         console.log(err);
-        //doing a test for github
       }
     );
   }
