@@ -13,7 +13,7 @@ class App extends React.Component {
       position => {
         //update state with setState method once the current position is returned from the callback
         this.setState({ lat: position.coords.latitude });
-        // console.log(position); => check if position is returned
+        // console.log(position);
       },
       err => {
         //update errMessage state once there is an error and call render to display the message to the user
